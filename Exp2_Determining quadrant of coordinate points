@@ -1,0 +1,55 @@
+//2. To accept a coordinate point in xy coordinate system and determine in which quadrant the coordinate points lie in?
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Input coordinates
+    double x, y;
+    cout << "Enter x-coordinate: ";
+    cin >> x;
+    cout << "Enter y-coordinate: ";
+    cin >> y;
+
+    // Determine the quadrant
+    if (x > 0 && y > 0) {
+        cout << "The point is in Quadrant I." << std::endl;
+    } else if (x < 0 && y > 0) {
+        cout << "The point is in Quadrant II." << std::endl;
+    } else if (x < 0 && y < 0) {
+        cout << "The point is in Quadrant III." << std::endl;
+    } else if (x > 0 && y < 0) {
+        cout << "The point is in Quadrant IV." << std::endl;#include <iostream>
+
+
+OR:
+
+int main() {
+    double x, y;
+
+    cout << "Enter x-coordinate: ";
+    cin >> x;
+
+    cout << "Enter y-coordinate: ";
+    cin >> y;
+
+    if (x == 0 && y == 0) {
+        cout << "The point is at the origin." << endl;
+    } else if (x > 0) {
+        cout << (y > 0 ? "Quadrant I" : "Quadrant IV") << endl;
+    } else {
+        cout << (y > 0 ? "Quadrant II" : "Quadrant III") << endl;
+    }
+
+    return 0;
+}
+
+    } else if (x == 0 && y == 0) {
+        cout << "The point is at the origin." << endl;
+    }
+
+    return 0;
+}
+
+
+
