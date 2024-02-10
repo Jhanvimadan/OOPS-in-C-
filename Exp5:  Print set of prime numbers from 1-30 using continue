@@ -1,0 +1,23 @@
+//5. Write a c++ program to print set of prime numbers from 1-30 using continue.
+
+#include <iostream>
+using namespace std;
+
+int main(){
+     cout << "Prime numbers from 1 to 30 are:";
+     for (int i = 2; i <= 30; ++i) {
+        bool is_prime = true;
+        for (int j = 2; j < i; ++j) {
+            if (i % j == 0) {
+                is_prime = false;
+                break;  
+            }
+        }
+        if (!is_prime) {
+            continue;  
+        }
+        cout << i << " ";
+    }
+    cout << "\n";
+    return 0;
+}
