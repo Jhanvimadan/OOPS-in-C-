@@ -1,0 +1,25 @@
+//4. Write a c++ program to display the N terms of odd natural no. and their sum.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N;
+
+    // Input the value of N
+    cout << "Enter the value of N: ";
+    cin >> N;
+
+    // Display odd natural numbers and calculate their sum
+    int sum = 0;
+    cout << "First " << N << " odd natural numbers are: ";
+    for (int i = 1; N > 0; i += 2, N--) {
+        std::cout << i << " ";
+        sum += i;
+    }
+
+    // Display the sum
+    cout << "\nSum of the first " << N << " odd natural numbers is: " << sum << std::endl;
+
+    return 0;
+}
