@@ -1,0 +1,88 @@
+// 3. To read roll no., name, marks of 3 subjects and calculate total percentage and division with grade.
+
+#include <iostream>
+using namespace std;
+
+#include <iostream>
+#include <string>
+
+class Student{
+private:
+    int rollNumber;
+    string name;
+    double marksSubject1, marksSubject2, marksSubject3;
+    double totalMarks;
+    double percentage;
+    string division;
+    char grade;
+
+public:
+    void readData() {
+        cout << "Enter Roll Number: ";
+        cin >> rollNumber;
+
+        cout << "Enter Name: ";
+        cin.ignore(); 
+        getline(cin, name);
+
+        cout << "Enter Marks for Subject 1: ";
+        cin >> marksSubject1;
+
+        cout << "Enter Marks for Subject 2: ";
+        cin >> marksSubject2;
+
+        cout << "Enter Marks for Subject 3: ";
+        cin >> marksSubject3;
+    }
+
+    void calculatePercentage() {
+        totalMarks = marksSubject1 + marksSubject2 + marksSubject3;
+        percentage = (totalMarks / 300.0) * 100.0;
+    }
+
+    void calculateDivisionAndGrade() {
+        if (percentage >= 60.0) {
+            division = "First";
+            grade = 'A';
+        } else if (percentage >= 45.0) {
+            division = "Second";
+            grade = 'B';
+        } else if (percentage >= 33.0) {
+            division = "Third";
+            grade = 'C';
+        } else {
+            division = "Fail";
+            grade = 'F';
+        }
+}
+
+void displayResult() {
+    cout << "\nResult:\n";
+    cout << "Roll Number: " << rollNumber << "\n";
+    cout << "Name: " << name << "\n";
+    cout << "Marks (Subject 1): " << marksSubject1 << "\n";
+    cout << "Marks (Subject 2): " << marksSubject2 << "\n";
+    cout << "Marks (Subject 3): " << marksSubject3 << "\n";
+    cout << "Total Marks: " << totalMarks << "\n";
+    cout << "Percentage: " << percentage << "%\n";
+    cout << "Division: " << division << "\n";
+    cout << "Grade: " << grade << "\n";
+}
+};
+
+int main() {
+    Student student;
+
+    // Read data
+    student.readData();
+
+    // Calculate percentage, division, and grade
+    student.calculatePercentage();
+    student.calculateDivisionAndGrade();
+
+    // Display result
+    student.displayResult();
+
+    return 0;
+}
+
