@@ -1,0 +1,23 @@
+//7. Write a C++ Program to convert decimal number to binary numbers using functions.
+#include <iostream>
+using namespace std;
+
+// Function to convert decimal to binary
+void decimalToBinary(int decimal) {
+    if (decimal > 0) {
+        decimalToBinary(decimal / 2);
+        cout << decimal % 2;
+    }
+}
+
+int main() {
+    int decimalNumber;
+
+    cout << "Enter a decimal number: ";
+    cin >> decimalNumber;
+
+    cout << "Binary equivalent: ";
+    decimalToBinary(decimalNumber);
+
+    return 0;
+}
